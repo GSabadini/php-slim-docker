@@ -1,4 +1,4 @@
-version: "3.7"
+version: "3.3"
 
 services:
   nginx:
@@ -28,7 +28,7 @@ services:
       - ./php:/var/www
     networks:
       - travellist
-  
+
   # db:
   #   image: mysql:5.7
   #   container_name: travellist-db

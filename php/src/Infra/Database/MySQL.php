@@ -1,0 +1,4 @@
+<?php
+
+
+final class MySQL{}
