@@ -1,11 +1,14 @@
-build:
-    docker-compose build
-
-enter:
-    docker exec -it app bash
-
 up:
-    docker-compose up -d
+	docker-compose up -d
+
+down:
+	docker-compose down --remove-orphans
 
 build:
-    docker-compose down --remove-orphans
+	docker-compose build
+
+bash:
+	docker exec -it travellist-app bash
+
+sniffer:
+	docker exec -it travellist-app ./vendor/bin/phpcbf src/

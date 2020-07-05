@@ -10,11 +10,13 @@ require __DIR__ . '/../vendor/autoload.php';
 
 $app = AppFactory::create();
 
-$app->get('/hello/{name}', function (Request $request, Response $response, array $args) {
-    $user = new User(1, "gabriel", "facina");
-    $json = json_encode($user->jsonSerialize());
-    $response->getBody()->write($json);
-    return $response;
-});
+$app->get(
+    '/hello/{name}', function (Request $request, Response $response, array $args) {
+        $user = new User(1, "gabriel", "facina");
+        $json = json_encode($user->jsonSerialize());
+        $response->getBody()->write($json);
+        return $response;
+    }
+);
 
 $app->run();

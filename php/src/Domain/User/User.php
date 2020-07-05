@@ -4,6 +4,7 @@ namespace App\Domain\User;
 
 /**
  * Class User
+ *
  * @package App\Domain\User
  */
 final class User
@@ -25,6 +26,7 @@ final class User
 
     /**
      * User constructor.
+     *
      * @param $id
      * @param $firstName
      * @param $lastName

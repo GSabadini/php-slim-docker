@@ -1,4 +1,6 @@
 <?php
 
 
-final class CreateUser{}
+final class CreateUser
+{
+}

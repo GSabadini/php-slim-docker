@@ -4,6 +4,9 @@ namespace App\Adapter\Database;
 
 /**
  * Class MySQL
+ *
  * @package App\Adapter\Database
  */
-final class MySQL{}
+final class MySQL
+{
+}
