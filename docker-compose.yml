@@ -3,7 +3,7 @@ version: "3.3"
 services:
   nginx:
     image: nginx:latest
-    container_name: travellist-nginx
+    container_name: nginx
     restart: unless-stopped
     ports:
       - 8000:80
@@ -11,38 +11,24 @@ services:
       - ./php:/var/www
       - ./nginx:/etc/nginx/conf.d
     networks:
-      - travellist
+      - backend
 
   app:
     build:
       args:
         user: sammy
         uid: 1000
-      context: ./
+      context: .
       dockerfile: Dockerfile
-    image: travellist
-    container_name: travellist-app
+    image: app
+    container_name: app
     restart: unless-stopped
     working_dir: /var/www/
     volumes:
       - ./php:/var/www
     networks:
-      - travellist
-
-#  db:
-#   image: mysql:5.7
-#   container_name: travellist-db
-#   restart: unless-stopped
-#   env_file:
-#     - .env
-#   environment:
-#     SERVICE_TAGS: dev
-#     SERVICE_NAME: mysql
-#   volumes:
-#     - ./mysql:/docker-entrypoint-initdb.d
-#   networks:
-#     - travellist
+      - backend
 
 networks:
-  travellist:
+  backend:
     driver: bridge
